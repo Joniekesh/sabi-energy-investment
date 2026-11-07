@@ -13,30 +13,30 @@ import FiveInvestorsSection from "@/components/site/FiveInvestorsSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import MobileInvestBar from "@/components/site/MobileInvestBar";
 
-export const Route = createFileRoute("/")({
-  component: SabiEnergyPage,
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Sabi Energy — Invest in Nigeria's Next Big Solar & Electronics Distribution Network",
-      },
-      {
-        name: "description",
-        content:
-          "Sabi Energy, powered by Sabimen Technologies Limited, is building a nationwide solar energy and electronics distribution business — China sourcing, Abuja warehousing, e-commerce and a 100,000-agent network. Five strategic investor positions, $10,000–$50,000 each.",
-      },
-      { property: "og:title", content: "Sabi Energy — Five Strategic Investor Opportunity" },
-      {
-        property: "og:description",
-        content:
-          "China sourcing. Abuja warehousing. E-commerce. 100,000-agent distribution. Five strategic investor positions from $10,000 to $50,000.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-});
+// export const Route = createFileRoute("/")({
+//   component: SabiEnergyPage,
+//   head: () => ({
+//     meta: [
+//       {
+//         title:
+//           "Sabi Energy — Invest in Nigeria's Next Big Solar & Electronics Distribution Network",
+//       },
+//       {
+//         name: "description",
+//         content:
+//           "Sabi Energy, powered by Sabimen Technologies Limited, is building a nationwide solar energy and electronics distribution business — China sourcing, Abuja warehousing, e-commerce and a 100,000-agent network. Five strategic investor positions, $10,000–$50,000 each.",
+//       },
+//       { property: "og:title", content: "Sabi Energy — Five Strategic Investor Opportunity" },
+//       {
+//         property: "og:description",
+//         content:
+//           "China sourcing. Abuja warehousing. E-commerce. 100,000-agent distribution. Five strategic investor positions from $10,000 to $50,000.",
+//       },
+//       { property: "og:type", content: "website" },
+//       { name: "twitter:card", content: "summary_large_image" },
+//     ],
+//   }),
+// });
 
 function SabiEnergyPage() {
   return (
@@ -65,3 +65,5 @@ function SabiEnergyPage() {
     </>
   );
 }
+
+export default SabiEnergyPage;
