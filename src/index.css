@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 72 30% 96%;
+    --foreground: 152 56% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 152 56% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 152 56% 9%;
+    --primary: 150 86% 19%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 70 22% 92%;
+    --secondary-foreground: 150 86% 19%;
+    --muted: 70 20% 93%;
+    --muted-foreground: 152 12% 34%;
+    --accent: 45 100% 48%;
+    --accent-foreground: 154 83% 13%;
+    --destructive: 0 74% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 14% 87%;
+    --input: 150 14% 87%;
+    --ring: 45 100% 48%;
+    --radius: 0.75rem;
+    --chart-1: 150 86% 19%;
+    --chart-2: 45 100% 48%;
+    --chart-3: 154 83% 13%;
+    --chart-4: 84 45% 55%;
+    --chart-5: 36 70% 55%;
+    --font-heading: "Sora", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Sabi Energy brand tokens */
+    --sabi-forest: #075b32;
+    --sabi-deep: #063d27;
+    --sabi-ink: #0a2318;
+    --sabi-gold: #f5b900;
+    --sabi-cream: #f7f8f2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+    text-wrap: balance;
+  }
+
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+
+  ::selection {
+    background: #f5b900;
+    color: #063d27;
+  }
+
+  :focus-visible {
+    outline: 2px solid #f5b900;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10;
+  }
+
+  .shell-wide {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-heading text-[0.68rem] font-semibold uppercase tracking-[0.22em];
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-7 bg-current opacity-60;
+  }
+
+  .display-head {
+    @apply font-heading font-bold uppercase leading-[1.06] tracking-[-0.02em];
+    font-size: clamp(1.75rem, 1rem + 2.9vw, 3.25rem);
+  }
+
+  .card-vault {
+    @apply rounded-[26px] border border-border bg-card;
+  }
+
+  .gold-rule {
+    @apply h-px w-full bg-gradient-to-r from-gold/70 via-gold/20 to-transparent;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 1;
+  }
+
+  .reveal-in {
+    animation: reveal-up 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 2px 24px rgba(6, 61, 39, 0.35);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-in {
+    animation: none;
+  }
+}
